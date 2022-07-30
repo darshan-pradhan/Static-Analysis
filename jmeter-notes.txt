@@ -1,0 +1,58 @@
+Thread group
+users: 10
+
+HTTP Cookie manager
+
+HTTP Header Manager
+Add
+Content-type    application/json
+
+HTTP Request
+protocol        http
+server          cdmsedwprd01.dpu.depaul.edu
+port            8081
+method          GET
+path            tickets/cost
+
+HTTP Request data
+Hard coded
+driver          DL123456
+legal-speed     30
+actual-speed    35
+num-axles       2
+
+Listeners
+- View Result Tree
+- Summary Report
+
+CSV Data Set Config
+Filename        <provide your local path to tickets.csv>
+File encoding   UTF-8
+variable names  driver,legal-speed,actual-speed,num-axles
+ignore first ln True
+
+or
+no variable names
+ignore first line: False
+
+Note recycle instructions
+
+HTTP Request data
+Loaded from CSV
+driver          ${driver}
+legal-speed     ${legal-speed}
+actual-speed    ${actual-speed}
+num-axles       ${num-axles}
+
+Add Assertions
+- Duration Assertion
+- JSON Assertion
+- JSR 223 Assertion
+- Assertion results
+
+Command line execution
+./jmeter -n -t <your-saved-configuration>.jmx -l <export-filename>
+
+Example
+./jmeter -n -t TicketCalculatorTest.jmx -l results1101b.csv
+(jmeter.bat for Windows)

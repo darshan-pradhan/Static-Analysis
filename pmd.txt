@@ -1,0 +1,15 @@
+plugins {
+    id "pmd"
+}
+
+pmd {
+    consoleOutput = true
+    toolVersion = "6.34.0"
+    rulePriority = 3
+    ignoreFailures = true
+    ruleSets = [
+            "category/java/errorprone.xml",
+            "category/java/bestpractices.xml",
+            "category/java/performance.xml"
+    ]
+}

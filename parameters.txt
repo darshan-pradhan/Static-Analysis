@@ -1,0 +1,6 @@
+HTTP Request
+protocol        http
+server          cdmsedwprd01.dpu.depaul.edu
+port            8081
+method          GET
+path            tickets/cost
